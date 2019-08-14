@@ -12,8 +12,7 @@ app.use('/welcome', cardsRouter);
 app.use(express.static(path.join(__dirname, '/public')));
 
 app.get('/', (req, res) => {
-    res.render('cards/welcome/welcome.hbs');
-    // res.send('<h1> not there yet </h1>');
+    res.render('welcome.hbs');
 });
 
 app.listen(port, () => console.log(`Server listening on port `));
@@ -39,7 +38,7 @@ app.listen(port, () => console.log(`Server listening on port `));
 // TODO
 // -Integrate and test the following:
 // | done | routes
-// |      | hbs
+// | done | hbs
 // |      | redirecting
 // |      | mongoose
 // |      | dotenv
