@@ -1,18 +1,20 @@
-const express = require('express');
+const express     = require('express');
 const cardsRouter = require('./routes/cards');
-const hbs = require('hbs');
-const path = require('path');
-const port = process.env.PORT || 3000;
-const app = express();
+const hbs         = require('hbs');
+const path        = require('path');
+const port        = process.env.PORT || 3000;
+const app         = express();
 
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, '/views'));
 
-app.use('/welcome', cardsRouter);
 app.use(express.static(path.join(__dirname, '/public')));
 
+// Routes:
+app.use('/cards', cardsRouter);
+
 app.get('/', (req, res) => {
-    res.render('welcome.hbs');
+    res.render('1__welcome');
 });
 
 app.listen(port, () => console.log(`Server listening on port `));
