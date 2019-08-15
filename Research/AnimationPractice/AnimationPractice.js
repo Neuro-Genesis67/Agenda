@@ -29,18 +29,6 @@ function slideOut() {
     card.classList.add('slide-out-top');
 }
 
-function fs(){
-    console.log("fs running");
-    var elem = document.documentElement;
-    if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-    } else if (elem.msRequestFullscreen) {
-        elem.msRequestFullscreen();
-    } else if (elem.mozRequestFullScreen) {
-        elem.mozRequestFullScreen();
-    } else if (elem.webkitRequestFullscreen) {
-        elem.webkitRequestFullscreen();
-    }
-}
+
 
 }

@@ -1,0 +1,23 @@
+TODO Make your app fullscreen:
+function fullScreen(){
+    console.log("fs running");
+    var elem = document.documentElement;
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } else if (elem.msRequestFullscreen) {
+        elem.msRequestFullscreen();
+    } else if (elem.mozRequestFullScreen) {
+        elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) {
+        elem.webkitRequestFullscreen();
+    }
+}
+
+TODO Eliminate redirects, make the program universal
+Make a controller class, possibly welcome.js could turn into that.
+Make it able to take loaded modules (js files) and make methods like:
+initPage(page/module), and then perhaps that page can handle its own stuff.
+This would eliminate hbs and give only one css file (yuck).
+
+OR ... hmmm. maybe a module that will empty the body for elements
+after the exit transition.
