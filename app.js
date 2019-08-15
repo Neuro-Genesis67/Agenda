@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.use('/cards', cardsRouter);
 
 app.get('/', (req, res) => {
-    res.render('1__welcome');
+    res.render('welcome');
 });
 
 app.listen(port, () => console.log(`Server listening on port `));
