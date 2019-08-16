@@ -82,6 +82,14 @@ body {
     }
 }
 
+/* ------------------- */
+#card {
+    visibility: hidden;
+}
+
+#testicles {
+    visibility: hidden;
+}
 
 
 
