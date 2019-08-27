@@ -1,5 +1,9 @@
 const express = require('express');
 const router = express.Router();
+
+
+const bodyParser = require('body-parser');
+const urlencodedParser = bodyParser.urlencoded({ extended: false });
 // const controller = require('../public/scripts/controller');
 
 
@@ -14,6 +18,13 @@ router.get('/welcome2', (req, res) => {
 // });
 // ____________________________
 
+// POST
+router.post('/testPost', urlencodedParser, (req, res) => {
+    console.log("post received");
+    console.log(req.body.data1);
+    console.log(req.body.data2);
+    // location.href = 'router/welcome2';
+});
 
 
 
