@@ -5,21 +5,49 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <script src="/scripts/pages/index.js"></script>
     <link rel="stylesheet" href="/css/index.css">
-
-    <script src="/scripts/functionality/navigator.js"></script>
-    <!--<script src="/scripts/functionality/navvy.js"></script>-->
-    <script src="/scripts/functionality/animations.js"></script>
     <link rel="stylesheet" href="/css/card.css">
-    <link rel="stylesheet" href="/css/animations.css">
 
+
+    <script src="/scripts/functionality/controller.js"></script>
+    <link rel="stylesheet" href="/css/animations.css">
     <title>Agenda</title>
 </head>
 <body>
     <div id="card">
-        <h1 id="welcomeToAgenda"> Welcome to Agenda </h1>
-        <h1 id="pressEnterToStart"> Press enter to start </h1>
+        <table>
+            <tr id="goUp">
+                <td>
+                    <img id="navUpCtrl" src="/Images/ctrl.png">
+                </td>
+                <td>
+                    <img id="navUpArrow" src="/Images/arrowUp.png">
+                </td>
+                <td>
+                    <h1 id="pageUp"> &nbsp; = &nbsp; Go up </h1>
+                </td>
+            </tr>
+            <tr id="goDown">
+                <td>
+                    <img id="navDownCtrl" src="/Images/ctrl.png">
+                </td>
+                <td>
+                    <img id="navDownArrow" src="/Images/arrowDown.png">
+                </td>
+                <td>
+                    <h1 id="pageDown"> &nbsp; = &nbsp; Go down </h1>
+                </td>
+            </tr>
+        </table>
+
+        <!--Add this from controller to the page to avoid code reuse in html files-->
+        <form id="form" method="post" action="/router/testPost">
+            <input type="text" name="data1" value="heeeres">
+            <input type="text" name="data2" value="Johnny!">
+            <input id="btnSubmit" type="submit" value="submit">
+        </form>
     </div>
 </body>
 </html>

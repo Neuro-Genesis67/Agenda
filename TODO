@@ -13,6 +13,26 @@ Design the start page - implement as needed
 
 
 
-Clean up this mess!
-Implement keylogger (Done, will run methods on: ctrl+up, ctrl+down)
-Implement animations
+Implement form submit when needed
+implement mongoDB (and dotenv)
+Have controller add the form element to all html pages to avoid code reuse
+
+
+Istedet for din switch:
+function animateCurrentPage() {
+    switch(currentPage) {
+        case '/':
+            slideInFromTop();
+            break;
+        case '/router/page2':
+            slideInFromTop();
+            break;
+        // default:
+        //     console.log("default switch statement");
+    }
+}
+-Istedet for din switch:
+når du går fra index -> page2 |Send previousPage til mongoDB|
+En funktion vil så hver gang den loader en ny page, hente din "previousPage" fra
+mongoDB og afgøre om den nye side kommer før eller efter den du skiftede fra.
+Alt efter situationen kan du så tilføje en passende animation.
