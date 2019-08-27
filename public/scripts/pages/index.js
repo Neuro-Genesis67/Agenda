@@ -1,21 +1,5 @@
-console.log("index.js running");
+console.log("index.js");
 
-
-
-addEventListener('keypress', function (pressed) {
-    if (pressed.key === 'Enter') {
-        submitAndRedirect();
-    }
-});
-
-function submitAndRedirect() {
-    let formSubmit = document.getElementById('form');
-    formSubmit.submit();
-    setTimeout(() => {
-        window.location.replace("router/welcome2");
-        return false;
-    }, 10);
-}
 
 
 

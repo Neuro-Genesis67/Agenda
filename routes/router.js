@@ -9,8 +9,8 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 // __________ Routes __________
 
-router.get('/welcome2', (req, res) => {
-    res.render('welcome2.hbs');
+router.get('/page2', (req, res) => {
+    res.render('page2.hbs');
 });
 //
 // router.get('/nocards', (req, res) => {
