@@ -1,4 +1,4 @@
-console.log("navigator.js");
+console.log("controller.js");
 
 let card = document.getElementById('card');
 const keylogger = [];
