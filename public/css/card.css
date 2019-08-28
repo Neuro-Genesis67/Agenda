@@ -4,8 +4,8 @@ body {
 }
 
 #card {
-    border: 2px solid #00e9e3;
-    background-color: dimgray;
+    border: 2px solid #fffd02;
+    background-color: #626262;
     position: absolute;
     height: 80vh;
     width: 80vw;

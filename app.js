@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const urlEncoder = bodyParser.urlencoded({ extended: false });
 const port       = process.env.PORT || 3000;
 const router     = require('./routes/router');
+// const mongoose   = require('mongoose');
                    // require('dotenv/config');
 
 app.set('view engine', 'hbs');
