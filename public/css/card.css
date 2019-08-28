@@ -15,9 +15,8 @@ body {
     margin-top: -40vh;
     text-align: center;
     font-size: xx-large;
-    visibility: hidden;
 }
 
-#form {
+#form, #card {
     visibility: hidden;
 }

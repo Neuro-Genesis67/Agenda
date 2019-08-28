@@ -118,8 +118,11 @@ function openFullscreen() {
 // Go to the next docElem by:
 // Doing the same thing, but in reverse.
 function animateCurrentPage() {
+    console.log("animateCurrentPage(): \n" + "currentPage: " + currentPage);
+
     switch(currentPage) {
         case '/':
+            console.log("case is '/'");
             slideInFromTop();
             break;
         case '/router/page2':
@@ -137,8 +140,10 @@ function slideInFromBottom() {
 }
 
 function slideInFromTop() {
+    console.log("slideInFromTop(): ");
     let card = document.getElementById('card');
     card.style.visibility = "visible";
+    console.log("visibility set to visible");
     card.classList.add('slide-in-bottom');
 }
 
