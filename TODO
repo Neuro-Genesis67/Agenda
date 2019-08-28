@@ -36,3 +36,10 @@ når du går fra index -> page2 |Send previousPage til mongoDB|
 En funktion vil så hver gang den loader en ny page, hente din "previousPage" fra
 mongoDB og afgøre om den nye side kommer før eller efter den du skiftede fra.
 Alt efter situationen kan du så tilføje en passende animation.
+
+-Bonus: currently virker det ikke på heroku,
+da location.href ikke er '/', men istedet:
+currentPage: t.herokuapp.com/
+
+Af den grund er næste skridt at implementere mongoDB,
+da resten sandsynligvis virker på heroku.
