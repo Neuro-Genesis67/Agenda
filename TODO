@@ -1,21 +1,16 @@
+--- Remarks from last session ---
+Find out how to update an entry in the DB (router)
 
 
 
 
+--- Top priority  ---
+Move navigation from the controller script onto the server.
 
 
 
-
-
-
-Design the start page - implement as needed
-
-
-
-
-Implement form submit when needed
-implement mongoDB (and dotenv)
-Have controller add the form element to all html pages to avoid code reuse
+--- Minor changes ---
+Add the form element dynamically to pages on load
 
 
 Istedet for din switch:
@@ -43,3 +38,39 @@ currentPage: t.herokuapp.com/
 
 Af den grund er næste skridt at implementere mongoDB,
 da resten sandsynligvis virker på heroku.
+
+//Check router.js - it has information on how to send and receive data between client/server
+
+
+_______________________________________________________________________________
+// Updating the db // (timeout might not be needed)
+// setTimeout(() => {
+    pageNavigation.findById("pageNavigationId", function (err, found) {
+        console.log(found); // <-- This returns the document before updating.
+        found.currentPage = 7923;
+        found.save();
+    });
+// }, 2000);
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// --- USEFUL STUFF --- //
+
+-Sending data | Server -> Browser
+ https://stackoverflow.com/questions/44415130/how-can-i-send-information-from-nodejs-server-to-client-side
+

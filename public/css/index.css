@@ -1,10 +1,14 @@
 
+h1 {
+    font-family: "Calibri Light";
+}
+
 #goUp {
     position: absolute;
     left: 50%;
     top: 50%;
     margin-left: -15vw;
-    margin-top: -17vh;
+    margin-top: -14vh;
 }
 
 #goDown {
@@ -12,12 +16,12 @@
     left: 50%;
     top: 50%;
     margin-left: -15vw;
-    margin-top: -7vh;
+    margin-top: -1vh;
 }
 
 #navUpCtrl, #navUpArrow, #navDownCtrl, #navDownArrow {
-    height: 8vh;
-    width: 5vw;
+    height: 7vh;
+    width: 4.5vw;
 }
 
 

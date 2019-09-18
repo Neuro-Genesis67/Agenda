@@ -1,32 +1,76 @@
-const express = require('express');
-const router = express.Router();
-
-
-const bodyParser = require('body-parser');
+const express          = require('express');
+const router           = express.Router();
+const bodyParser       = require('body-parser');
+const pageNavigation   = require('../models/PageNavigation'); // Renamend from PageNavigation
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
-// const controller = require('../public/scripts/controller');
 
 
-// __________ Routes __________
 
+// --- GET --- //
 router.get('/page2', (req, res) => {
-    res.render('page2.hbs');
+    console.log("you hit page 2");
+    res.render('page2.hbs', {
+        hbs_currPageNum: 22,
+        hbs_prevPageNum: 222
+    });
 });
-//
-// router.get('/nocards', (req, res) => {
-//     res.send('<h1> No cards here... </h1>')
-// });
-// ____________________________
 
-// POST
-router.post('/testPost', urlencodedParser, (req, res) => {
-    console.log("post received");
-    console.log(req.body.data1);
-    console.log(req.body.data2);
-    // location.href = 'router/welcome2';
+router.get('/page3', (req, res) => {
+    console.log("you hit page 3");
+    res.render('page3.hbs', {
+        hbs_currPageNum: 33,
+        hbs_prevPageNum: 333
+    });
 });
+
+// --- POST --- //
+router.post('/posts', urlencodedParser, (req, res) => {
+    // Receive data from req.body
+    // console.log(req.body.currPageValue);
+    // console.log(req.body.prevPageValue);
+    res.redirect("page2");
+});
+
+
+
+
 
 
 
 
 module.exports = router;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

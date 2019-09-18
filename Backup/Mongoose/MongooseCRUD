@@ -1,0 +1,23 @@
+Create:
+
+    const pageData = new pageNavigation({
+        _id: "pageNavigationId",
+        currentPage: 2,
+        previousPage: 1
+    });
+    pageData.save();
+________________________________________________
+
+Update:
+
+    pageNavigation.findById("pageNavigationId", function (err, found) {
+        console.log(found); // <-- This returns the document before updating.
+        found.currentPage = 7923;
+        found.save();
+    });
+
+________________________________________________
+
+
+
+

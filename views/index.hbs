@@ -6,46 +6,40 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!--<link rel="stylesheet" href="/css/index.css">-->
+    <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/card.css">
-
-    <script src="/scripts/functionality/controller.js"></script>
     <link rel="stylesheet" href="/css/animations.css">
+
+    <script src="/scripts/functionality/animator.js"    defer></script>
+    <script src="/scripts/functionality/controller.js"  defer></script>
+    <script src="/scripts/pages/index.js"               defer></script>
     <title>Agenda</title>
 </head>
+
 <body>
     <div id="card">
         <table>
             <tr id="goUp">
-                <td>
-                    <img id="navUpCtrl" src="/Images/ctrl.png">
-                </td>
-                <td>
-                    <img id="navUpArrow" src="/Images/arrowUp.png">
-                </td>
-                <td>
-                    <h1 id="pageUp"> &nbsp; = &nbsp; Go up </h1>
-                </td>
+                <td> <img id="navUpCtrl" src="/Images/ctrl.png">         </td>
+                <td> <img id="navUpArrow" src="/Images/arrowUp.png">     </td>
+                <td> <h1> &nbsp; = &nbsp; Go up </h1>                              </td>
             </tr>
             <tr id="goDown">
-                <td>
-                    <img id="navDownCtrl" src="/Images/ctrl.png">
-                </td>
-                <td>
-                    <img id="navDownArrow" src="/Images/arrowDown.png">
-                </td>
-                <td>
-                    <h1 id="pageDown"> &nbsp; = &nbsp; Go down </h1>
-                </td>
+                <td> <img id="navDownCtrl" src="/Images/ctrl.png">       </td>
+                <td> <img id="navDownArrow" src="/Images/arrowDown.png"> </td>
+                <td> <h1> &nbsp; = &nbsp; Go down </h1>                            </td>
             </tr>
         </table>
 
-        <!--Add this from controller to the page to avoid code reuse in html files-->
-        <form id="form" method="post" action="/router/testPost">
-            <input type="text" name="data1" value="heeeres">
-            <input type="text" name="data2" value="Johnny!">
-            <input id="btnSubmit" type="submit" value="submit">
-        </form>
+        <div id="currPageNum"> {{this.hbs_currPageNum}} </div>
+        <div id="prevPageNum"> {{this.hbs_prevPageNum}} </div>
+        <div id="saveData"> saveData </div>
     </div>
 </body>
 </html>
+
+
+
+
+
+

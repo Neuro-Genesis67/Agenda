@@ -1,4 +1,4 @@
-console.log("page2.js running");
+console.log("initialized ----- page2.js");
 
 function redirect() {
     location.href = '/';
