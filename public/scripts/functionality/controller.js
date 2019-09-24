@@ -2,29 +2,66 @@ console.log("initialized ----- controller.js");
 
 class Controller {
 
-    loadNewCard = function (cardNumber) {
-        // animator.openFullscreen(); // Mercilessly open fullscreen every time
+    loadPage = function (page) {
+        // animator.openFullscreen(); // disabled because impractical to work with
         card.classList = "";
+        let currentPage  = parseInt(document.getElementById("currentPage").innerHTML);
+        let previousPage = parseInt(document.getElementById("previousPage").innerHTML);
+        console.log("go");
+        console.log(currentPage);
+        console.log(previousPage);
 
-        if (cardNumber == "nextCard") {
-            animator.slideOutUpwards(card);
+        let nextPage;
 
-
-        } else if (cardNumber == "previousCard") {
+        if (page == "previous") {
             animator.slideOutDownwards(card);
+
+            if (currentPage == 0) {
+                nextPage = 0;
+            } else {
+                nextPage = currentPage - 1;
+            }
         }
 
-        // Fill out form element input fields
-        controller.sendForm("This is my saveData");
+        if (page == "next") {
+            animator.slideOutUpwards(card);
+            nextPage = currentPage + 1;
+        }
+
+        setTimeout(() => {
+            if (nextPage == 0 && currentPage == 0) {
+                card.classList = "";
+                animator.slideInUpwards(card);
+                // controller.redirectTo(0);
+            } else {
+                controller.redirectTo(nextPage);
+            }
+        }, 100);
     }
 
-    sendForm = function (saveData) {
-        console.log("sendForm______________");
-        document.getElementById('currPageId').value = saveData;
-        document.getElementById('prevPageId').value = prevPageValue;
-
+    redirectTo = function (pageNumber) {
+        document.getElementById('form_nextPage').value = pageNumber;
         let form = document.getElementById('form');
         form.submit();
+    }
+
+
+    addFormElementToCard = function(card) {
+        let formElement =
+                ' <form id="form" method="post" action="/router/posts">               '
+            +   '     <input id="form_previousPage" type="text" name="form_previousPage" value="prevvy">      '
+            +   '     <input id="form_nextPage"     type="text" name="form_nextPage"     value="nextty">      '
+            +   '     <input id="sumbitId" type="submit"               value="submit">'
+            +   ' </form>                                                             ';
+        card.innerHTML += formElement;
+
+
+        // Something went wrong when renaming hbs_currentPage and hbs:orevuiysOage
+        console.log("slabski");
+        let peepee = parseInt(document.getElementById("currentPage").innerHTML);
+        // let pe = document.getElementById("currentPage");
+        console.log(peepee);
+        document.getElementById('form_previousPage').value = peepee;
     }
 
     initKeylogger = function () {
@@ -45,33 +82,18 @@ class Controller {
                 keylogger.push('ArrowUp');
 
             if (keylogger.includes('Control') && keylogger.includes('ArrowUp'))
-                controller.loadNewCard("previousCard");
+                controller.loadPage("previous");
 
             if (keylogger.includes('Control') && keylogger.includes('ArrowDown'))
-                controller.loadNewCard("nextCard");
+                controller.loadPage("next");
         });
-    }
-
-    addFormElementToCard = function(card) {
-        let formElement =
-                ' <form id="form" method="post" action="/router/posts">                  '
-            +   '     <input id="currPageId" type="text" name="currPageValue" value="a"> '
-            +   '     <input id="prevPageId" type="text" name="prevPageValue" value="b"> '
-            +   '     <input id="sumbitId"   type="submit" value="submit">               '
-            +   ' </form>                                                                ';
-        card.innerHTML += formElement;
     }
 }
 
 // INITIALIZATION
 let card          = document.getElementById('card');
-// let currPageValue = document.getElementById('currPageNum').innerHTML;
-// let prevPageValue = document.getElementById('prevPageNum').innerHTML;
-let currPageValue = 2;
-let prevPageValue = 3;
-
-let animator   = new Animator();
-let controller = new Controller();
+let animator      = new Animator();
+let controller    = new Controller();
 
 controller.initKeylogger();
 controller.addFormElementToCard(card);

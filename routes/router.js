@@ -1,34 +1,44 @@
 const express          = require('express');
 const router           = express.Router();
 const bodyParser       = require('body-parser');
-const pageNavigation   = require('../models/PageNavigation'); // Renamend from PageNavigation
+const pageNavigation   = require('../models/PageNavigation');
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
+const pages = [
+    "0_Welcome",
+    "1_HowWasYourDay",
+    "2_HowAreYouFeeling"
+];
 
+let previousPage;
+let nextPage;
 
 
 // --- GET --- //
-router.get('/page2', (req, res) => {
-    console.log("you hit page 2");
-    res.render('page2.hbs', {
-        hbs_currPageNum: 22,
-        hbs_prevPageNum: 222
+router.get('/0_Welcome', (req, res) => {
+    res.render('0_Welcome.hbs', {
+        currentPage:  nextPage,
+        previousPage: previousPage
     });
 });
 
-router.get('/page3', (req, res) => {
-    console.log("you hit page 3");
-    res.render('page3.hbs', {
-        hbs_currPageNum: 33,
-        hbs_prevPageNum: 333
+router.get('/1_HowWasYourDay', (req, res) => {
+    res.render('1_HowWasYourDay.hbs', {
+        currentPage:  nextPage,
+        previousPage: previousPage
     });
 });
+
 
 // --- POST --- //
 router.post('/posts', urlencodedParser, (req, res) => {
-    // Receive data from req.body
-    // console.log(req.body.currPageValue);
-    // console.log(req.body.prevPageValue);
-    res.redirect("page2");
+    console.log("/posts...");
+    previousPage = req.body.form_previousPage;
+    nextPage     = req.body.form_nextPage;
+
+
+    //Save some data to mongoDB here
+
+    res.redirect(pages[nextPage]);
 });
 
 

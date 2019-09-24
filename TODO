@@ -11,7 +11,7 @@ Move navigation from the controller script onto the server.
 
 --- Minor changes ---
 Add the form element dynamically to pages on load
-
+Flyt / addressen animation ved page up fra controller til 0_Welcome.js
 
 Istedet for din switch:
 function animateCurrentPage() {
@@ -52,6 +52,43 @@ _______________________________________________________________________________
     });
 // }, 2000);
 ________________________________________________________________________________
+
+
+-next eller previous vælges: Keylogger kører loadPage(next/previous)
+-loadPage(next)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

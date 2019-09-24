@@ -19,17 +19,11 @@ app.use('/router', router);
 
 
 app.get('/', (req, res) => {
-    res.render('index.hbs', {
-        hbs_currPageNum: 11,
-        hbs_prevPageNum: 111
+    res.render('0_welcome.hbs', {
+        currentPage:  0,
+        previousPage: 0
     });
 });
-
-// app.get('/', (req, res) => {
-//     res.render('index.hbs', {
-//         "sentNum": 5
-//     });
-// });
 
 mongoose.connect(
     process.env.DB_CONNECTION,

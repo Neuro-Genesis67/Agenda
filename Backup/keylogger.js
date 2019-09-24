@@ -19,9 +19,9 @@ addEventListener('keydown', function (kbd) {
         keylogger.push('ArrowUp');
 
     if (keylogger.includes('Control') && keylogger.includes('ArrowUp'))
-        controller.loadNewCard("previousCard");
+        controller.loadPage("previousCard");
 
     if (keylogger.includes('Control') && keylogger.includes('ArrowDown'))
-        controller.loadNewCard("nextCard");
+        controller.loadPage("nextCard");
 
 });
