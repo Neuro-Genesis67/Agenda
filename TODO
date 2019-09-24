@@ -1,61 +1,18 @@
 --- Remarks from last session ---
-Find out how to update an entry in the DB (router)
 
 
 
 
 --- Top priority  ---
-Move navigation from the controller script onto the server.
+
 
 
 
 --- Minor changes ---
-Add the form element dynamically to pages on load
-Flyt / addressen animation ved page up fra controller til 0_Welcome.js
-
-Istedet for din switch:
-function animateCurrentPage() {
-    switch(currentPage) {
-        case '/':
-            slideInFromTop();
-            break;
-        case '/router/page2':
-            slideInFromTop();
-            break;
-        // default:
-        //     console.log("default switch statement");
-    }
-}
--Istedet for din switch:
-når du går fra index -> page2 |Send previousPage til mongoDB|
-En funktion vil så hver gang den loader en ny page, hente din "previousPage" fra
-mongoDB og afgøre om den nye side kommer før eller efter den du skiftede fra.
-Alt efter situationen kan du så tilføje en passende animation.
-
--Bonus: currently virker det ikke på heroku,
-da location.href ikke er '/', men istedet:
-currentPage: t.herokuapp.com/
-
-Af den grund er næste skridt at implementere mongoDB,
-da resten sandsynligvis virker på heroku.
-
-//Check router.js - it has information on how to send and receive data between client/server
 
 
-_______________________________________________________________________________
-// Updating the db // (timeout might not be needed)
-// setTimeout(() => {
-    pageNavigation.findById("pageNavigationId", function (err, found) {
-        console.log(found); // <-- This returns the document before updating.
-        found.currentPage = 7923;
-        found.save();
-    });
-// }, 2000);
-________________________________________________________________________________
 
 
--next eller previous vælges: Keylogger kører loadPage(next/previous)
--loadPage(next)
 
 
 

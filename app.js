@@ -16,7 +16,7 @@ app.set('views', path.join(__dirname, '/views'));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '/public')));
 app.use('/router', router);
-
+app.use('/favicon.ico', express.static('images/favicon.ico'));
 
 app.get('/', (req, res) => {
     res.render('0_welcome.hbs', {
